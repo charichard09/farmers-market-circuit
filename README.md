@@ -1,70 +1,324 @@
-# Getting Started with Create React App
+![Farmers Market](./Farmers%20Market%20Diagram.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Avery's Organics 
 
-In the project directory, you can run:
+a website to show customers which market they will be at on a given day.
 
-### `npm start`
+display what produce is available during which months on their site too.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+use local state to toggle between different days. 
+  Note use conditional rendering for as many conditions as we want — including all seven days of the week!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+include a component diagram in your README.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Market Schedule
+const marketSchedule = [  
+ {  
+    day: "Sunday",
+    location: "Lents International",
+    hours: "9:00am - 2:00pm",
+    booth: "4A"
+ },
+ {  
+    day: "Monday",
+    location: "Pioneer Courthouse Square",
+    hours: "10:00am - 2:00pm",
+    booth: "7C"
+ },
+ {  
+    day: "Tuesday",
+    location: "Hillsboro",
+    hours: "5:00pm - 8:30pm",
+    booth: "1F"
+ },
+ {  
+    day: "Wednesday",
+    location: "Shemanski Park",
+    hours: "10:00am - 2:00pm",
+    booth: "3E"
+ },
+ {  
+    day: "Thursday",
+    location: "Northwest Portland",
+    hours: "2:00pm - 6:00pm",
+    booth: "6D"
+ },
+ {  
+    day: "Saturday",
+    location: "Beaverton",
+    hours: "10:00am - 1:30pm",
+    booth: "9G"
+ }
+];
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Seasonal Produce
+const availableProduce = [  
+   {  
+      month: "January",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Garlic",
+         "Mushrooms",
+         "Onions",
+         "Potatoes",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "February",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Garlic",
+         "Mushrooms",
+         "Onions",
+         "Potatoes"
+      ]
+   },
+   {  
+      month: "March",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Rhubarb",
+         "Garlic",
+         "Mushrooms",
+         "Onions",
+         "Potatoes"
+      ]
+   },
+   {  
+      month: "April",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Rhubarb",
+         "Asparagus",
+         "Garlic",
+         "Lettuce",
+         "Mushrooms",
+         "Onions",
+         "Potatoes"
+      ]
+   },
+   {  
+      month: "May",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Rhubarb",
+         "Asparagus",
+         "Cauliflower",
+         "Garlic",
+         "Lettuce",
+         "Potatoes",
+         "Radishes"
+      ]
+   },
+   {  
+      month: "June",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Rhubarb",
+         "Blackberries",
+         "Cherries",
+         "Raspberries",
+         "Strawberries",
+         "Asparagus",
+         "Broccoli",
+         "Cauliflower",
+         "Kohlrabi",
+         "Lettuce",
+         "Mushrooms",
+         "Potatoes",
+         "Radishes",
+         "Squash"
+      ]
+   },
+   {  
+      month: "July",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Rhubarb",
+         "Apricots",
+         "Blackberries",
+         "Blueberries",
+         "Cherries",
+         "Melons",
+         "Nectarines",
+         "Peaches",
+         "Raspberries",
+         "Strawberries",
+         "Tomatoes",
+         "Beets",
+         "Broccoli",
+         "Brussel Sprouts",
+         "Cabbage",
+         "Carrots",
+         "Cauliflower",
+         "Cucumber",
+         "Eggplant",
+         "Garlic",
+         "Green Beans",
+         "Kohlrabi",
+         "Lettuce",
+         "Mushrooms",
+         "Potatoes",
+         "Radishes",
+         "Squash",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "August",
+      selection: [  
+         "Apples",
+         "Apricots",
+         "Blackberries",
+         "Blueberries",
+         "Cherries",
+         "Melons",
+         "Nectarines",
+         "Peaches",
+         "Pears",
+         "Plums",
+         "Raspberries",
+         "Rhubarb",
+         "Strawberries",
+         "Tomatoes",
+         "Beets",
+         "Broccoli",
+         "Brussel Sprouts",
+         "Cabbage",
+         "Carrots",
+         "Cauliflower",
+         "Corn",
+         "Cucumber",
+         "Eggplant",
+         "Garlic",
+         "Green Beans",
+         "Kohlrabi",
+         "Lettuce",
+         "Mushrooms",
+         "Onions",
+         "Peas",
+         "Peppers",
+         "Potatoes",
+         "Radishes",
+         "Squash",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "September",
+      selection: [  
+         "Apples",
+         "Blueberries",
+         "Grapes",
+         "Melons",
+         "Peaches",
+         "Pears",
+         "Plums",
+         "Raspberries",
+         "Tomatoes",
+         "Broccoli",
+         "Brussel Sprouts",
+         "Cabbage",
+         "Carrots",
+         "Cauliflower",
+         "Corn",
+         "Cucumber",
+         "Eggplant",
+         "Garlic",
+         "Green Beans",
+         "Kohlrabi",
+         "Lettuce",
+         "Mushrooms",
+         "Onions",
+         "Peas",
+         "Peppers",
+         "Potatoes",
+         "Radishes",
+         "Squash",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "October",
+      selection: [  
+         "Apples",
+         "Grapes",
+         "Hazelnuts",
+         "Melons",
+         "Peaches",
+         "Pears",
+         "Tomatoes",
+         "Broccoli",
+         "Brussel Sprouts",
+         "Cabbage",
+         "Carrots",
+         "Cauliflower",
+         "Corn",
+         "Cucumber",
+         "Eggplant",
+         "Garlic",
+         "Green Beans",
+         "Kohlrabi",
+         "Lettuce",
+         "Mushrooms",
+         "Onions",
+         "Peas",
+         "Peppers",
+         "Potatoes",
+         "Pumpkins",
+         "Radishes",
+         "Squash",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "November",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+         "Broccoli",
+         "Carrots",
+         "Cauliflower",
+         "Garlic",
+         "Mushrooms",
+         "Onions",
+         "Potatoes",
+         "Squash",
+         "Turnips"
+      ]
+   },
+   {  
+      month: "December",
+      selection: [  
+         "Apples",
+         "Hazelnuts",
+         "Pears",
+        "Broccoli",
+         "Carrots",
+         "Cauliflower",
+         "Garlic",
+         "Mushrooms",
+         "Onions",
+         "Potatoes",
+         "Turnips"
+      ]
+   }
+];
